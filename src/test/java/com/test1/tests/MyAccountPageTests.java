@@ -35,7 +35,7 @@ public class MyAccountPageTests
 	
           driver.manage().window().maximize();
     	  driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-    	  driver.findElement(By.id("email")).sendKeys("jvedula1973");
+    	  driver.findElement(By.id("email")).sendKeys("jvedula1973@gmail.com");
     	  driver.findElement(By.id("passwd")).sendKeys("prAsanna");
     	  driver.findElement(By.name("SubmitLogin")).click();
     	  
