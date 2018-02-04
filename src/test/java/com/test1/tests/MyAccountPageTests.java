@@ -32,14 +32,14 @@ public class MyAccountPageTests
   @Test
   public void TestSuccessfulLogin()  {
 	  
-	
+	  	
           driver.manage().window().maximize();
     	  driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     	  driver.findElement(By.id("email")).sendKeys("jvedula1973@gmail.com");
     	  driver.findElement(By.id("passwd")).sendKeys("prAsanna");
     	  driver.findElement(By.name("SubmitLogin")).click();
-    	  
-    	  Assert.assertTrue(driver.findElement(By.name("search_query")).getText().contains("Search"));
+    	  String expectedMsg = driver.findElement(By.className("page-heading")).getText();
+    	  Assert.assertEquals("MY ACCOUNT",expectedMsg);
          
 
   }
@@ -54,30 +54,9 @@ public class MyAccountPageTests
 	 
 	  
 	 driver.close();
+	 driver.quit();
 	 
   }
   
-  @Test
-  public void TestAnchorTag() throws InterruptedException
-  {
-	
-	  
-	  List<WebElement> list = driver.findElements(By.cssSelector("order-number"));
-													
-      for (WebElement element : list) {
-          String link = element.getAttribute("href");
-          System.out.println(element.getTagName() + "=" + link +", "+ element.getText());
-      }
-	  
-	  
-	  
-	  
-//	  driver.findElement(By.xpath("//a[contains('#299')]")).click();
-	  Assert.assertTrue(driver.findElement(By.name("order-info")).isDisplayed());
-	  
-	  
-	  
-  }
-  
-  
+ 
 }
