@@ -5,6 +5,22 @@
   <version>1.0-SNAPSHOT</version>
   <name>TestCompany</name>
   <description>Test Company</description>
+  
+   <build>
+        <plugins>
+            <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+	   			 <artifactId>maven-surefire-plugin</artifactId>
+	    		<version>2.20.1</version>
+			    <configuration>
+			      <suiteXmlFiles>
+			        <suiteXmlFile>src/test/java/com/test1/tests/RegressionSuit.xml</suiteXmlFile>
+			      </suiteXmlFiles>
+			    </configuration>
+			  </plugin>
+        </plugins>
+    </build>
+  
   <dependencies>
 	 	<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
@@ -22,16 +38,6 @@
 	    <artifactId>maven-surefire-plugin</artifactId>
 	    <version>2.20.1</version>
 	</dependency>
-
-	<dependency>
-		<groupId>com.microsoft.sqlserver</groupId>
-		<artifactId>mssql-jdbc</artifactId>
-		<version>6.2.2.jre8</version>
-	</dependency>
-
-
   </dependencies>
- 
-  
   
 </project>
