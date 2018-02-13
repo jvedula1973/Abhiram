@@ -1,13 +1,7 @@
 package com.test1.tests;
 import org.testng.annotations.Test;
-
 import junit.framework.Assert;
-
 import java.util.List;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.DatabaseMetaData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,44 +13,31 @@ import org.testng.annotations.BeforeTest;
 public class MyAccountPageTests 
 {
 	 WebDriver driver = null;
-	  
 	@BeforeTest
 	public void beforeTest()
 	{
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Abhiram\\workspace\\web-automation\\src\\chromedriver.exe");
-  		driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Abhiram\\workspace\\web-automation\\Selenium_Automation\\src\\chromedriver.exe");
+		driver = new ChromeDriver();
 	}
-	
-	
   @Test
-  public void TestSuccessfulLogin()  {
+  public void TestSuccessfulLogin() throws InterruptedException  {
+   	driver.manage().window().maximize();
+	  driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+	  driver.findElement(By.id("email")).sendKeys("jvedula1973@gmail.com");
+	  driver.findElement(By.id("passwd")).sendKeys("prAsanna");
+	  driver.findElement(By.name("SubmitLogin")).click();
 	  
-	  	
-          driver.manage().window().maximize();
-    	  driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-    	  driver.findElement(By.id("email")).sendKeys("jvedula1973@gmail.com");
-    	  driver.findElement(By.id("passwd")).sendKeys("prAsanna");
-    	  driver.findElement(By.name("SubmitLogin")).click();
-    	  String expectedMsg = driver.findElement(By.className("page-heading")).getText();
-    	  Assert.assertEquals("MY ACCOUNT",expectedMsg);
-         
-
+	  Assert.assertTrue(driver.findElement(By.className("page-heading")).getText().contains("MY ACCOUNT"));
+	  
   }
   
- 
-  
-  
   @AfterTest
-  public void afterTest() 
+  public void afterTest()
   {
-	  
-	 
 	  
 	 driver.close();
 	 driver.quit();
-	 
   }
-  
- 
+   
 }
