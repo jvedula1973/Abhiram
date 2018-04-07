@@ -19,12 +19,12 @@ public class LoginPage {
 	public void typeUserName()
 	{
 		
-		driver.findElement(userName).sendKeys("jvedula1973@gmail.com");
+		driver.findElement(userName).sendKeys("admin");
 	}
 	
 	public void typePassword()
 	{
-		driver.findElement(pwd).sendKeys("prAsanna");
+		driver.findElement(pwd).sendKeys("demo123");
 
 	}
 	
