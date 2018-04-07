@@ -20,7 +20,7 @@ public class MyAccountPageTests
 	public void beforeTest()
 	{
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Abhiram\\workspace\\web-automation\\src\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Abhiram\\workspace\\Abhiram-master\\chromedriver.exe");
 		driver = new ChromeDriver();
 		
 		
@@ -28,17 +28,18 @@ public class MyAccountPageTests
 	
 	
   @Test
-  public void TestSuccessfulLogin() throws InterruptedException  {
+  public void testSuccessfulLogin() throws InterruptedException  {
 	  
 	 
 		
 	   	driver.manage().window().maximize();
-	  driver.get("http://test1.absofttrainings.com/my-account/");
-	  driver.findElement(By.id("username")).sendKeys("testuser1");
-	  driver.findElement(By.id("password")).sendKeys("testpwd1");
-	  driver.findElement(By.name("login")).click();
+	   	driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+		driver.findElement(By.id("email")).sendKeys("jvedula1973@gmail.com");
+		driver.findElement(By.id("passwd")).sendKeys("prAsanna");
+		driver.findElement(By.name("SubmitLogin")).click();
 	  
-	  Assert.assertTrue(driver.findElement(By.id("user_info")).getText().contains("testuser1"));
+	  Assert.assertTrue(driver.findElement(By.className("page-heading")).getText().contains("MY ACCOUNT"));
+	  driver.findElement(By.className("logout")).click();
 	  
   }
   
