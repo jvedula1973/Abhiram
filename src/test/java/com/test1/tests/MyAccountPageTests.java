@@ -50,27 +50,7 @@ public class MyAccountPageTests
 	 driver.close();
   }
   
-  @Test
-  public void TestAnchorTag() throws InterruptedException
-  {
-	
-	  
-	  List<WebElement> list = driver.findElements(By.cssSelector("order-number"));
-													
-      for (WebElement element : list) {
-          String link = element.getAttribute("href");
-          System.out.println(element.getTagName() + "=" + link +", "+ element.getText());
-      }
-	  
-	  
-	  
-	  
-//	  driver.findElement(By.xpath("//a[contains('#299')]")).click();
-	  Assert.assertTrue(driver.findElement(By.name("order-info")).isDisplayed());
-	  
-	  
-	  
-  }
+ 
   
   
 }
