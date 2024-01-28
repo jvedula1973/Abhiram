@@ -1,5 +1,6 @@
 package com.stf;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.apache.logging.log4j.LogManager;
@@ -18,7 +19,7 @@ public class RunTests {
 		try {
 
 			System.out.println("testing framework.");
-			System.setProperty("webdriver.chrome.driver", "D:\\Projects\\Java\\git\\Prasanna\\src\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\vpras\\IdeaProjects\\Abhiram\\src\\drivers\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
 
 			ChromeOptions options = new ChromeOptions();
@@ -55,7 +56,7 @@ public class RunTests {
 	public void TestLogin() throws Exception {
 		try {
 
-			System.setProperty("webdriver.chrome.driver", "D:\\Projects\\Java\\git\\Prasanna\\src\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\vpras\\IdeaProjects\\Abhiram\\src\\drivers\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
 			ChromeOptions options = new ChromeOptions();
 //			options.addArguments("--no-sandbox");
@@ -71,7 +72,7 @@ public class RunTests {
 			driver.findElement(By.xpath(
 					"/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[4]/td[2]/div/input"))
 					.click();
-			driver.close();
+
 		}
 
 		catch (Exception ex) {
@@ -85,7 +86,7 @@ public class RunTests {
 		try {
 			logger.info("testing framework.");
 
-			System.setProperty("webdriver.chrome.driver", "D:\\Projects\\Java\\git\\Prasanna\\src\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\vpras\\IdeaProjects\\Abhiram\\src\\drivers\\chromedriver.exe");
 //			WebDriverManager.chromedriver().clearResolutionCache().forceDownload()
 //            .setup();
 //			WebDriverManager.chromedriver().setup();

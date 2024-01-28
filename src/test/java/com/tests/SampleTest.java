@@ -5,16 +5,16 @@ import org.testng.annotations.Test;
 import com.stf.RunTests;
 
 public class SampleTest {
-//	@Test
-//	public void TestTitle() {
-//		RunTests rt = new RunTests();
-//		try {
-//			rt.TestTitle();
-//		} catch (Exception e) {
-//
-//			e.printStackTrace();
-//		}
-//	}
+	@Test
+	public void TestTitle() {
+		RunTests rt = new RunTests();
+		try {
+			rt.TestTitle();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
 	
 	
 	 @Test
